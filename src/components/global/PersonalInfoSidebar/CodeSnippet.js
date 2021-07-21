@@ -12,7 +12,7 @@ export default function CodeSnippet(){
   wake_up();
   eat();
   code();
-  sleep();
+  // sleep();
   daily_routine();
 } )();`
             }
