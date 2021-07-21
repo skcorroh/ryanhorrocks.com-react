@@ -1,0 +1,32 @@
+.global-header .uk-tab a {
+    border-bottom-width: 5px;
+}
+
+.global-header .uk-tab>.uk-active>a,
+.global-header .uk-tab>*:hover>a {
+    border-color: var(--blue-lt);
+}
+
+.global-header .uk-navbar .uk-tab {
+    margin-left: 0;
+}
+
+.global-header .uk-navbar .uk-tab li {
+    padding-left: 0;
+    position: relative;
+}
+
+.global-header .uk-navbar-nav>li.uk-active>a {
+    color: var(--blue-dk);
+}
+
+.global-header .uk-navbar .uk-tab li:not(:first-child)::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    bottom: 10%;
+    width: 1px;
+    background: var(--tan);
+}
