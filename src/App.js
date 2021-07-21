@@ -18,7 +18,7 @@ function App() {
             <div className="sidebar-nav">
 
               {RoutesList.map(route => {
-                if (route?.sidebar) {
+                if (route?.subpages && route.subpages.length > 0) {
 
                   return (
                     <Route key={route.label} exact={route.activeOnlyWhenExact} path={route.to}>
@@ -26,15 +26,13 @@ function App() {
                         <div className="uk-card-header">
                           <h3 className="uk-card-title">{route.label}</h3>
                         </div>
-                        {route?.subpages &&
-                          <div className="uk-card-body">
-                            <div>
-                              <ul className="uk-nav uk-nav-default">
-                                {route.subpages.map(subpage => <NavItem key={"sub" + subpage.label} to={route.to + subpage.to} label={subpage.label} />)}
-                              </ul>
-                            </div>
+                        <div className="uk-card-body">
+                          <div>
+                            <ul className="uk-nav uk-nav-default">
+                              {route.subpages.map(subpage => <NavItem key={"sub" + subpage.label} to={route.to + subpage.to} label={subpage.label} />)}
+                            </ul>
                           </div>
-                        }
+                        </div>
                       </div>
                     </Route>
                   );

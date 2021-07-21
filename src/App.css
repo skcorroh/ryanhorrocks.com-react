@@ -6,3 +6,12 @@
     margin-top: 30px;
   }
 }
+
+.resume-page .uk-card-header .uk-icon-button{
+    background-color: var(--greenish);
+    color: white;
+}
+.resume-page .uk-card-header .uk-icon-button:hover{
+    background-color: var(--blue-lt);
+    color: white;
+}
