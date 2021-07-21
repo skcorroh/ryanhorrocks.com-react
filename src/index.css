@@ -1,0 +1,36 @@
+
+
+:root {
+  --blue-dk: #294250;
+  --blue-lt: #6c8584;
+  --greenish: #345D61;
+  --tan: #cfc7b9;
+  --brown: #74492B;
+
+}
+
+html, body{
+  min-height: 100vh;
+}
+
+.App .uk-grid{
+  margin-left: -20px;
+}
+.App .uk-grid>*{
+  padding-left: 20px;
+}
+.App .uk-grid>.uk-grid-margin{
+  margin-top: 20px;
+}
+
+@media (min-width: 1200px){
+  .App .uk-grid{
+    margin-left: -30px;
+  }
+  .App .uk-grid>*{
+    padding-left: 30px;
+  }
+  .App .uk-grid>.uk-grid-margin{
+    margin-top: 30px;
+  }
+}
