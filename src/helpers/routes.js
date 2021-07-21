@@ -11,57 +11,50 @@ const RoutesList = [
         activeOnlyWhenExact: true,
         icon: "user",
         page: About,
-        // title: "About Me",
-        // subtitle: "I'm not a narcissist but it's time to talk about me, myself, and I"
     },
     {
         to: "/resume",
         label: "Resume",
-        activeOnlyWhenExact: false,
         icon: "file-text",
         page: Resume,
-        title: "Resume",
-        subtitle: "It sounds like resume, but it's spelt resume",
-        removeBodyClass: true,
     },
     {
         to: "/portfolio",
         label: "Portfolio",
-        activeOnlyWhenExact: false,
-        icon: "grid",
+        icon: "code",
         page: Portfolio,
-        title: "Portfolio",
-        subtitle: "Time to get into the nitty gritty of what I can do",
-        sidebar: true,
         subpages: [
-            {
-                label: "Test",
-                to: "/test"
-            },
-            {
-                label: "CHI",
-                to: "/chi"
-            },
+            // {
+            //     label: "Test",
+            //     to: "/test"
+            // },
+            // {
+            //     label: "CHI",
+            //     to: "/chi"
+            // },
         ]
     },
     {
         to: "/fiddles",
         label: "Fiddles",
-        activeOnlyWhenExact: false,
-        icon: "file-text",
+        icon: "git-branch",
         page: Fiddles,
-        title: "Fiddles",
-        subtitle: "AKA Portfolio 2.0, specifically for random personal projects",
-        sidebar: true
+        subpages: [
+            // {
+            //     label: "Test",
+            //     to: "/test"
+            // },
+            // {
+            //     label: "CHI",
+            //     to: "/chi"
+            // },
+        ]
     },
     {
         to: "/contact",
         label: "Contact",
-        activeOnlyWhenExact: false,
-        icon: "grid",
+        icon: "comments",
         page: Contact,
-        subtitle: "Let's get to know eachother, what say you?",
-        title: "Contact",
     },
 ];
 
