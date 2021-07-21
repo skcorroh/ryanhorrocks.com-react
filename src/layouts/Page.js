@@ -1,17 +1,13 @@
-export default function Page({ title, subtitle, header_side, removeBodyClass, children }) {
+const Page = ({ children, className }) => {
     return (
-
-        <div className="uk-card uk-card-default uk-box-shadow-large">
-            <PageHeader title={title} subtitle={subtitle} header_side={header_side} />
-            <div className={removeBodyClass ? "" : "uk-card-body"}>
-                {children}
-            </div>
+        <div className={className + " uk-card uk-card-default uk-box-shadow-large"}>
+            {children}
         </div>
-
     );
 }
 
-function PageHeader({title, subtitle, header_side}) {
+
+const PageHeader = ({ title, subtitle, header_side }) => {
     return (
         <div className="uk-card-header">
             <div className="uk-flex uk-flex-between uk-flex uk-flex-middle">
@@ -28,3 +24,22 @@ function PageHeader({title, subtitle, header_side}) {
         </div>
     );
 }
+
+
+const PageBody = ({ bodyClass = "uk-card-body", children }) => {
+    return (
+        <div className={bodyClass}>
+            {children}
+        </div>
+    );
+}
+
+const PageFooter = ({ children }) => {
+    return (
+        <div className="uk-card-footer">
+            {children}
+        </div>
+    );
+}
+
+export { Page as default, PageHeader, PageBody, PageFooter }
