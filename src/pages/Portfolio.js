@@ -1,37 +1,46 @@
-import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Page, { PageBody, PageHeader } from '../layouts/Page';
 
-import Page from '../layouts/Page';
 
-class Portfolio extends Component {
-    state = {}
-    render() {
-        console.log('portfolio ', this.props)
+const Portfolio = (props) => {
+    const title = "Portfolio";
+    const subtitle = "Time to get into the nitty gritty of what I've done professionally";
+    return (
+        <Page>
+            <PageHeader title={title} subtitle={subtitle} />
+            <PageBody>
 
-        return (
-            <Page {...this.props}>
-                {this.props?.subpages &&
-                    <Switch>
-                        <Route exact path={this.props.to}>
-                            <h3>Please select a topic.</h3>
-                        </Route>
-                        {this.props.subpages.map(subpage =>
-                            <Route key={"sub" + subpage.label} path={`${this.props.to}${subpage.to}`}>
-                                <PortfolioItem page={subpage.label} />
+                {
+                    (props?.subpages && props.subpages.length > 0) ? (
+
+                        <Switch>
+                            <Route exact path={props.to}>
+                                <h3>Please select a topic.</h3>
                             </Route>
-                        )}
-                        <Route>
-                            <h2>Looks like that portfolio item hasn't been created yet</h2>
-                        </Route>
-                    </Switch>
+                            {props.subpages.map(subpage =>
+                                <Route key={"sub" + subpage.label} path={`${props.to}${subpage.to}`}>
+                                    <PortfolioItem page={subpage.label} />
+                                </Route>
+                            )}
+                            <Route>
+                                <h2>Looks like that portfolio item hasn't been created yet</h2>
+                            </Route>
+                        </Switch>
+                    ) : (
+                        <div>
+                            <h3>There are currently no portfolio items</h3>
+                            <p>As this site is still being perfected, no portfolio items have been added.</p>
+                            <p>Please check back frequently to see all of the awesome work I do!</p>
+                        </div>
+                    )
                 }
-            </Page>
-        );
-    }
+            </PageBody>
+        </Page>
+
+    );
 }
 
 export default Portfolio;
-
 
 function PortfolioItem(props) {
     return (<h2>You have successfully found {props.page}</h2>);
