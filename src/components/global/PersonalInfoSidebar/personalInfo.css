@@ -1,0 +1,10 @@
+.personal-info .uk-icon-button{
+    background-color: var(--greenish);
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.personal-info .uk-icon-button:hover{
+    background-color: var(--blue-lt);
+    color: white;
+}
