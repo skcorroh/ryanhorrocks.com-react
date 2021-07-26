@@ -1,12 +1,14 @@
 import "./personalInfo.css";
 import portait from "../../../assets/images/Family Portrait.jpg";
 import CodeSnippet from "./CodeSnippet";
+import { useEffect, useState } from "react";
 
 
 export default function PersonalInfo() {
 
 
     return (
+        <>
         <div className="personal-info uk-card uk-card-default uk-card-small uk-box-shadow-large"
             uk-sticky="bottom:true; offset: 30px;">
             <div className="uk-card-media-top uk-card-header uk-padding-remove">
@@ -36,5 +38,29 @@ export default function PersonalInfo() {
                     uk-tooltip="Pick up that phone like it's 1997!"><span hidden>Call Me</span></a>
             </div>
         </div>
+        <RandomJoke />
+        </>
+    );
+}
+
+
+const RandomJoke = () => {
+    useEffect(() => {
+        fetch('https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,racist,sexist,explicit&type=single')
+            .then(response => response.json())
+            .then(data => { console.log(data); setJoke(data) })
+    }, [])
+    const [joke, setJoke] = useState(false);
+    return (
+        <>
+            {(joke && !joke.error && joke.id !== 28 && joke.joke) &&
+                <div className="uk-card uk-card-default uk-card-small uk-card-body sidebar-mt uk-animation-scale-up">
+                    <p className="uk-text-bold uk-margin-remove-bottom uk-text-small">Programming Joke of the day</p>
+                    <div className="uk-text-meta">{joke.joke.split('\n').map((e,i)=> <span key={`idkmbffj${i}`}>{e}<br/></span> )}</div>
+                    <hr className="uk-margin-remove-bottom uk-margin-small-top" />
+                    <p className="uk-margin-remove uk-text-small" style={{fontSize: "10px"}}><span style={{fontSize: "inherit"}} className="uk-text-meta">Brought to you by</span> <a className="uk-link" href="https://github.com/Sv443/JokeAPI" target="_blank" role="noreferrer">Free Joke API</a></p>
+                </div>
+            }
+        </>
     );
 }
