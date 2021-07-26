@@ -1,6 +1,6 @@
 const Page = ({ children, className }) => {
     return (
-        <div className={className + " uk-card uk-card-default uk-box-shadow-large"}>
+        <div className={ (className || "") + " uk-card uk-card-default uk-box-shadow-large"}>
             {children}
         </div>
     );
