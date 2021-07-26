@@ -11,11 +11,11 @@ function App() {
     <section className="App uk-section">
       <div className="uk-container">
         <div className="" uk-grid="" >
-          <aside className="uk-width-medium">
+          <aside className="uk-width-medium uk-visible@m">
             <div className="">
               <PersonalInfo />
             </div>
-            <div className="sidebar-nav">
+            <div className="sidebar-mt">
 
               {RoutesList.map(route => {
                 if (route?.subpages && route.subpages.length > 0) {
