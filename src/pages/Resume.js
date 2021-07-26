@@ -7,7 +7,8 @@ const Resume = (props) => {
     const title = "Resume";
     const subtitle = "It sounds like resume, but it's spelt resume";
 
-    const resume_url = "https://ryanhorrocks.com/new_site/Ryan_Horrocks_Resume.pdf"
+    const resume_url = "https://ryanhorrocks.com/Ryan_Horrocks_Resume.pdf"
+    
     const [version, setVersion] = useState( 0 );
     return (
         <Page className="resume-page">
